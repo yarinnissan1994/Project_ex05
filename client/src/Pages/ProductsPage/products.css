@@ -1,0 +1,9 @@
+.my-tbl {
+  height: 100vh;
+  width: 82%;
+  overflow: auto;
+}
+
+td:nth-child(2):hover {
+  cursor: pointer;
+}

@@ -13,5 +13,7 @@ namespace Project_ex05.entities
         public static MainManager Instance { get { return insance; } }
 
         public ProductManager ProductM = new ProductManager();
+
+        public MessageManegaer MessageM = new MessageManegaer();
     }
 }

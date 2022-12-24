@@ -8,5 +8,9 @@ namespace Project_ex05.entities
 {
     public class MessageManegaer
     {
+        public void SendSqlQueryWriteToDB(string SqlQuery)
+        {
+            DAL.sqlQuery.WriteToDB(SqlQuery);
+        }
     }
 }

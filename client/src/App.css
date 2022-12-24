@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: antiquewhite;
+}
+.loremP {
+  width: 600px;
+}
+.expended {
+  background-color: lightblue !important;
+}

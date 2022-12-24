@@ -1,0 +1,14 @@
+.form-container {
+  width: 82%;
+  height: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.form-group {
+  width: 50%;
+}
