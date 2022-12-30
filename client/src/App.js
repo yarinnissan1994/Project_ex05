@@ -4,6 +4,7 @@ import "./App.css";
 import { NavbarComponent } from "./Components/Navbar/navbar.component";
 import { AboutPage } from "./Pages/AboutPage/about.page";
 import { ContactUsPage } from "./Pages/ContactUsPage/contactUs.page";
+import { EditProductPage } from "./Pages/EditProductPage/editProduct.page";
 import { HomePage } from "./Pages/HomePage/home.page";
 import { LoginPage } from "./Pages/LoginPage/login.page";
 import { ProductsPage } from "./Pages/ProductsPage/products.page";
@@ -21,6 +22,7 @@ function App() {
             <Route path="/about" element={<AboutPage />}></Route>
             <Route path="/contact-us" element={<ContactUsPage />}></Route>
             <Route path="/products" element={<ProductsPage />}></Route>
+            <Route path="/edit-product" element={<EditProductPage />}></Route>
             <Route path="/profile" element={<ProfilePage />}></Route>
           </Routes>
         </div>

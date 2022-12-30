@@ -11,12 +11,12 @@ namespace Project_ex05.DAL
 {
     public class sqlQuery
     {
+        static string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Northwind;Data Source=localhost\\sqlexpress";
 
         public delegate object SetDataReader_delegate(SqlDataReader reader);
         public static object StartReadFromDB(string SqlQuery, SetDataReader_delegate Ptrfunc)
         {
             object retHash = null;
-            string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Northwind;Data Source=localhost\\sqlexpress";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -27,14 +27,13 @@ namespace Project_ex05.DAL
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         retHash = Ptrfunc(reader);
-                        return retHash;
                     }
                 }
             }
+            return retHash;
         }
         public static void WriteToDB(string SqlQuery)
         {
-            string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Northwind;Data Source=localhost\\sqlexpress";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

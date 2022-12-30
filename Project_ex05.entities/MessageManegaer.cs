@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Data.Sql;
+using Project_ex05.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +10,10 @@ namespace Project_ex05.entities
 {
     public class MessageManegaer
     {
-        public void SendSqlQueryWriteToDB(string SqlQuery)
+        public void SendUserMessageToDB(UserMessage data)
         {
-            DAL.sqlQuery.WriteToDB(SqlQuery);
+            MessageQ messageQ = new MessageQ();
+            messageQ.ConvertUserMessageToSqlQuery(data);
         }
     }
 }

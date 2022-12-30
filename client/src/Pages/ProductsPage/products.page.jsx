@@ -1,26 +1,42 @@
 import React, { useEffect, useState } from "react";
-import { getProducts } from "../../services/services";
+import { useNavigate } from "react-router-dom";
+import { deleteProduct, getProducts } from "../../services/services";
 import "./products.css";
 
 export const ProductsPage = () => {
+  const navigate = useNavigate();
   const [productsData, setProductsData] = useState([]);
+
   const getProductsFromDB = async () => {
     let res = await getProducts();
     setProductsData(res);
-    // console.log(res);
+    console.log(res);
   };
   useEffect(() => {
     getProductsFromDB();
-    //console.log(productsData);
   }, []);
 
   const [expanded, setExpanded] = useState(false);
   const [key, setKey] = useState(null);
 
-  function handleClick(proKey) {
+  const handleClick = (proKey) => {
     setExpanded(!expanded);
     setKey(proKey);
-  }
+  };
+
+  const handleUpadate = (Product) => {
+    navigate("/edit-product", {
+      state: {
+        Product,
+      },
+    });
+  };
+
+  const habdleDelete = async (productID) => {
+    await deleteProduct(productID);
+    setExpanded(!expanded);
+    getProductsFromDB();
+  };
 
   return (
     <div className="my-tbl">
@@ -46,9 +62,29 @@ export const ProductsPage = () => {
                   </tr>
                   {expanded && product.ProductID === key ? (
                     <tr className="expanded">
-                      <td colSpan={4} className="expanded">
+                      <td>
+                        <button
+                          className="btn btn-warning"
+                          onClick={() => {
+                            handleUpadate(product);
+                          }}
+                        >
+                          Edit Item
+                        </button>
+                      </td>
+                      <td colSpan={2} className="expanded">
                         <h5>{product.ProductName} Description : </h5>
                         {product.QuantityPerUnit}
+                      </td>
+                      <td>
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => {
+                            habdleDelete(product.ProductID);
+                          }}
+                        >
+                          Remove Item
+                        </button>
                       </td>
                     </tr>
                   ) : null}

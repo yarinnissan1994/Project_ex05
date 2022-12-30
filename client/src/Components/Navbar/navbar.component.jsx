@@ -40,6 +40,7 @@ export const NavbarComponent = (props) => {
         <li className="yarin-li">
           <Link to="/profile">
             <img src={user.picture} alt={user.name} className="profile-img" />
+            <br></br>
             <label className="Link-lbl">{user.name}</label>
           </Link>
         </li>

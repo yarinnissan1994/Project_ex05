@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A808DF38-D2A6-4F02-B540-30425C5BD6E3}</ProjectGuid>
+    <ProjectGuid>{2CC25CED-9D4D-4E27-AFE9-3866B4223D53}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Project_ex05.entities</RootNamespace>
-    <AssemblyName>Project_ex05.entities</AssemblyName>
+    <RootNamespace>Data.Sql</RootNamespace>
+    <AssemblyName>Data.Sql</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,16 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainManager.cs" />
-    <Compile Include="MessageManegaer.cs" />
-    <Compile Include="ProductManager.cs" />
+    <Compile Include="MessageQ.cs" />
+    <Compile Include="ProductQ.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Data.Sql\Data.Sql.csproj">
-      <Project>{2cc25ced-9d4d-4e27-afe9-3866b4223d53}</Project>
-      <Name>Data.Sql</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Project_ex05.DAL\Project_ex05.DAL.csproj">
       <Project>{833552d2-34a4-45ae-bc47-bb05b5a114e7}</Project>
       <Name>Project_ex05.DAL</Name>
