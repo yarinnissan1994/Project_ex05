@@ -110,11 +110,7 @@ export const EditProductPage = () => {
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
-          <button
-            type="submit"
-            className="btn btn-danger"
-            onClick={handleReturn}
-          >
+          <button className="btn btn-danger" onClick={handleReturn}>
             Return
           </button>
         </div>
